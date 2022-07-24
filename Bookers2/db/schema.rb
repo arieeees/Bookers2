@@ -10,15 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_19_130434) do
-
-  create_table "books", force: :cascade do |t|
-    t.string "title"
-    t.string "body"
-    t.string "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
+ActiveRecord::Schema.define(version: 2022_07_24_112951) do
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -28,7 +20,6 @@ ActiveRecord::Schema.define(version: 2022_07_19_130434) do
     t.datetime "remember_created_at"
     t.string "name"
     t.text "introduction"
-    t.string "profile_image_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
