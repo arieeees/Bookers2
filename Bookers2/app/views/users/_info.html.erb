@@ -1,20 +1,26 @@
 <table class="table">
+  <h2>User info</h2>
   <tr>
-    <% if user.profile_image.attached? %>
-      <%= image_tag user get_profile_image, size: "100x100" %>
-    <% else %>
-      <%= image_tag 'no_image', size: "100x100" %>
-    <% end %>
+    <td>
+        <% if @user.profile_image.attached? %>
+          <%= image_tag @user.profile_image, size: "100x100" %>
+        <% else %>
+          <%= image_tag 'default-image', size: "100x100" %>
+        <% end %>
+    </td>
   </tr>
   <tr>
     <th>name</th>
-    <td><%= user.name %></td>
+    <td><%= @user.name %></td>
   </tr>
   <tr>
     <th>introduction</th>
-    <td><%= user.introduction %></td>
+    <td><%= @user.introduction %></td>
   </tr>
 </table>
-<a class="btn btn-outline-secondary btn-block" href="/users/:id/edit">
-    <i class='fas fa-user-cog'></i>
-</a>
+<div class="row">
+  <div class="btn btn-outline-secondary btn-block">
+    <%= form_with model: @user, url: edit_user_path(current_user), class: "fas fa-user-cog" do |f| %>
+    <% end %>
+  </div>
+</div>
