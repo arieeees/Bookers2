@@ -15,7 +15,7 @@
               <% else %>
                 <%= image_tag 'default-image', size: "100x100" %>
               <% end %><br>
-              <%= link_to @user.name, user_path(current_user) %>
+              <%= link_to @user.name, user_path(@user) %>
             </td>
             <td><%= @book.title %></td>
             <td><%= @book.body %></td>
